@@ -20,3 +20,10 @@ This panel manages and shows some parameters like the following:
 6. when a NAVx is tuned to an ILS, automatically display its CDI on 2 LED bars
 7. display Indicated Air Speed, Altitude (QNH), Height (QFE), HDG, Vertical Speed
 
+## **The architecture**
+
+
+All the Radio frequencies and courses are managed on a first 16x2 char LCD. The Speed(s), Altitude, HDG, etc are shown on a second LCD and the CDI is shown using 2 LED bars + a single 3mm green central LED.
+To edit every frequency and course i used an encoder + 1 button.
+
+**Sorry.... Under construction**
