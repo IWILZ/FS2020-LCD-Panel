@@ -7,7 +7,7 @@ This my second project is a bit more complicated but anyway i will try to give y
 Again i started with these main goals in mind:
 1. i wanted to build it using one of my Arduino(s) i had in my drawer
 2. i wanted to write some code for it so i didn't chose any "high-level" developing HW/SW platform (like Mobiflight for example). They are very powerful, but i like to write my own code and solder some wires from scratch
-3. i wanted to realize a simple, flexible and cheap panel too
+3. i wanted to realize a simple, flexible and cheap panel
 
 Like for my first project, this panel don't need any development effort on the PC side and you can use **an Arduino board of any type** (i used a Nano) plus some cheap other stuff like an encoder, a couple of LCDs and few LEDs and buttons.
 
