@@ -70,10 +70,16 @@ In the following picture you can see how to connect a generic LED and a generic 
 
 Each button should be "normally opened" so it will "close the circuit" to the ground only when pressed.
 
-## **Using the Encoder and LCDs**
-An encoder is quite a sort of "fast button" that changes its' state very quickly when is turned right or left. Furthermore, our encoder must have also a button that is activated by pressing the rotation shaft. For these reasons an encoder is a bit more complex than a simple button as you can see in the following picture.
+## **The Encoder**
+In this project the encoder allow us to edit frequencies and courses rotating the shaft so it is quite a sort of "fast button" that changes its state very quickly when is turned right or left. Furthermore, our encoder must have also a button that is activated by pressing the rotation shaft. For these reasons an encoder is a bit more complex than a simple button as you can see in the following picture but this is not a problem because the program uses the **BasicEncoder library** to manage it.
 
 ![picture 5](https://user-images.githubusercontent.com/94467184/144690024-96a5ee97-b932-485a-949e-6504f55dfdcd.jpg)
+
+## **Using the LCDs**
+Also these devices are more complex than a simple LED but 2x16 chars LCDs are widely used in a lot of projects so they are cheap and well known. They are available in 2 versions: **with** and **without** serial interface and in this project **we need the first version** because they need **only 2 PINs** (in addition to power supply) to be connected to an Arduino board.
+
+![picture 6](https://user-images.githubusercontent.com/94467184/144691093-544582cf-7d3e-490a-b2f9-4e852264e4de.jpg)
+
 
 
 **Sorry.... Under construction**
