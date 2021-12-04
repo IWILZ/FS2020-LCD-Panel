@@ -82,7 +82,7 @@ The serial interface version of the LCD comes with a small additional board that
 
 ![picture 6](https://user-images.githubusercontent.com/94467184/144691093-544582cf-7d3e-490a-b2f9-4e852264e4de.jpg)
 
-So, within the project, the modules communicate with each other according to the scheme of the following figure.
+So, within the project, the modules communicate with each other according to the scheme of the following figure and the communications will be manged by the **LiquidCrystal_I2C library**.
 
 
 ![PICTURE 7](https://user-images.githubusercontent.com/94467184/144692083-7aac30fb-d2cb-4067-9922-b7e0c063257f.jpg)
@@ -92,4 +92,4 @@ So, within the project, the modules communicate with each other according to the
 
 
 
-**Sorry.... Under construction**
+**Sorry.... still under construction**
