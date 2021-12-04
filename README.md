@@ -1,5 +1,6 @@
 # FS2020-LCD-Panel
 Two alphanumeric LCDs and 2 LED bars to show and manage some in-flight parameters for FS2020.
+![picture 1](https://user-images.githubusercontent.com/94467184/144686894-c6397e9b-c9e7-4ae6-ac98-a33d2978ecd4.jpg)
 
 ## **Why this project**
 This my second project is a bit more complicated but anyway i will try to give you every useful informations to let you build your own panel.
@@ -21,10 +22,13 @@ This panel manages and shows some parameters like the following:
 6. when a NAVx is tuned to an ILS, automatically display its CDI on 2 LED bars
 7. display Indicated Air Speed, Altitude (QNH), Height (QFE), HDG, Vertical Speed
 
-## **The architecture**
+I made my panel to be placed above my PC monitor so i can see all the parameters in the most comfortable way.
 
-
-All the Radio frequencies and courses are managed on a first 16x2 char LCD. The Speed(s), Altitude, HDG, etc are shown on a second LCD and the CDI is shown using 2 LED bars + a single 3mm green central LED.
+All the Radio frequencies and courses are managed on a first 16x2 char LCD. Speed(s), Altitude, HDG, etc are shown on a second LCD and the CDI is shown using 2 LED bars + a single 3mm green central LED.
 To edit every frequency and course i used an encoder + 1 button.
+![picture 0](https://user-images.githubusercontent.com/94467184/144687184-f3bc54db-0105-41a0-8961-6876fe6753f5.jpg)
+
+
+## **The architecture**
 
 **Sorry.... Under construction**
