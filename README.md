@@ -92,7 +92,7 @@ The last components i've used are a couple LED bars each (+ 1 green central LED)
 Each bar has 10 individually driven LEDs. Eight LEDs are green, one is yellow and the last is red. Using these bars i can see how much deviation (left or right) is from the radial set via the OBS on a specific VOR station. Also in this case the simple **Grove_LED_Bar library** is used to manage the bars. 
 
 
-<img src="https://user-images.githubusercontent.com/94467184/144693314-ae652585-4712-4aac-8cbd-42745784322a.png" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/94467184/144693314-ae652585-4712-4aac-8cbd-42745784322a.png" width="30%" height="30%">
 
 
 
