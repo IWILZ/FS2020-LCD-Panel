@@ -88,7 +88,7 @@ So, within the project, the modules communicate with each other according to the
 <img src="https://user-images.githubusercontent.com/94467184/144692377-9d0b1b67-9b64-42e5-a704-afd23688af9c.jpg" width="70%" height="70%">
 
 ## **LED bars and CDI**
-The last components i've used are a couple LED bars each (+ 1 green central LED) to realize a CDI (Course Deviation Indicator) when we are in range with a VOR.
+The last components i've used are a couple LED bars (+ 1 green central LED) to realize a CDI (Course Deviation Indicator) when we are in range with a VOR.
 Each bar has 10 individually driven LEDs. Eight LEDs are green, one is yellow and the last is red. Using these bars i can see how much deviation (left or right) is from the radial set via the OBS on a specific VOR station. Also in this case the simple **Grove_LED_Bar library** is used to manage the bars. 
 
 
