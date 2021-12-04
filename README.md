@@ -1,4 +1,4 @@
-# FS2020-LCD-Panel
+# FS2020-LCD-Panel with Arduino
 Two alphanumeric LCDs and 2 LED bars to show and manage some in-flight parameters for FS2020.
 ![picture 1](https://user-images.githubusercontent.com/94467184/144686894-c6397e9b-c9e7-4ae6-ac98-a33d2978ecd4.jpg)
 
