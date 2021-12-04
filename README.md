@@ -85,7 +85,8 @@ The serial interface version of the LCD comes with a small additional board that
 So, within the project, the modules communicate with each other according to the scheme of the following figure.
 
 
-![PICTURE 7](https://user-images.githubusercontent.com/94467184/144691940-857fdef9-567a-4231-b923-cf067c138e98.jpg)
+![PICTURE 7](https://user-images.githubusercontent.com/94467184/144692083-7aac30fb-d2cb-4067-9922-b7e0c063257f.jpg)
+
 
 
 
