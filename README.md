@@ -46,7 +46,7 @@ The panel reads values and send commands to FS using the **FS2020TA.exe** (made 
 What you need is:
 
 1. an ordinary Arduino board (not necessarily a Nano)
-2. two LDC 16x2 chars
+2. two LDC 16x2 chars with the serial interface
 3. two led bars 
 4. one encoder with push button
 5. a couple of buttons or spring switches
@@ -65,37 +65,40 @@ Before to start is better to spend few words about LEDs and buttons connection.
 
 Each Arduino pin can be configured as an Input or Output by the program and this is very flexible. Obviously each LED connection has to be an Output (any output pin produces a 5Vcc when at high level) and each button/switch as Input but in this last case the program have to declare it as **"INPUT_PULLUP"** pin to avoid random readings.
 
-In the following picture you can see how to connect a generic LED and a generic button/switch.
+In the following picture you can see how to connect a generic LED and a generic button/switch. Each button should be "normally opened" so it will "close the circuit" to the ground only when pressed.
 
 <img src="https://user-images.githubusercontent.com/94467184/144689525-0ceccac7-b2d9-435a-b5f5-9f292a1aac2a.jpg" width="80%" height="80%">
 
 ### **About the resistor** 
 To avoid a damage of the micro controller itself **NEVER CONNECT A LED DIRECTLY to the Arduino**, but use a **resistor** to limit the current flowing to the LED. **The resistor value depends on the LED brand and colour** (normally red ones needs a lower value resistor than green ones) but you could start with a value of 1KOhm and then change it to find the right value/brightness for your LED. If you have a tester you can also measure the current flowing into the LED considering that the maximum current on a output PIN of the Arduino cannot **exceed 20mA**. If you cannot measure the current, just look at your LED's light and don't exceed with its brightness.
 
-Each button should be "normally opened" so it will "close the circuit" to the ground only when pressed.
-
 ## **The Encoder**
 In this project the encoder allow us to edit frequencies and courses rotating the shaft so it is quite a sort of "fast button" that changes its state very quickly when is turned right or left. Furthermore, our encoder must have also a button that is activated by pressing the rotation shaft. For these reasons an encoder is a bit more complex than a simple button as you can see in the following picture but this is not a problem because the program uses the **BasicEncoder library** to manage it.
 
 <img src="https://user-images.githubusercontent.com/94467184/144690024-96a5ee97-b932-485a-949e-6504f55dfdcd.jpg" width="30%" height="30%">
 
-## **The LCD and the bus I2C**
-Also these devices are more complex than a simple LED but 2x16 chars LCDs are widely used in a lot of projects so they are cheap and well known. They are available in 2 versions: **with** and **without** a serial interface and in this project **we need the first version** because they need **only 2 PINs** (in addition to power supply) to be connected to an Arduino board.
+## **LED bars and CDI**
+For this panel i've used also 2 LED bars (+ 1 green central LED) to realize a CDI (Course Deviation Indicator) when in range with a VOR station.
+Each bar has 10 individually driven LEDs. Eight LEDs are green, one is yellow and the last is red. Using these bars i can see how much deviation (left or right) is from the radial set via the OBS on a specific VOR station. Also in this case the simple **Grove_LED_Bar library** is used to manage the bars. 
 
-The serial interface version of the LCD comes with a small additional board (that must be soldered to the LCD one) that allows to communicate with other devices using a **serial protocol called I2C**.
+<img src="https://user-images.githubusercontent.com/94467184/144693314-ae652585-4712-4aac-8cbd-42745784322a.png" width="30%" height="30%">
+
+## **The LCDs**
+Yes LCDs are more complex than a simple LED, but these 2x16 chars devices are widely used in a lot of projects so they are cheap and well known. They are available in 2 versions: **with** and **without** a serial interface and in this project **we need the first version** because they need **only 2 PINs** (in addition to power supply) to be connected to an Arduino board.
+
+The serial interface version of the LCD comes with a small additional board (that must be soldered to the LCD one) that allows to communicate with other devices using a **serial protocol**.
 
 <img src="https://user-images.githubusercontent.com/94467184/144691093-544582cf-7d3e-490a-b2f9-4e852264e4de.jpg" width="35%" height="35%">
 
-So, within the project, the modules communicate with each other according to the scheme of the following figure and the communications will be manged by the **LiquidCrystal_I2C library**.
+### **The I2C serial BUS**
+
+Now you know that, within the project Arduino communicates with both LCDs using a serial bus named I2C that is a bi-directional BUS but in this case informations flow only from the microcontroller to each LCD but these need to have **two different addresses**. 
+If you are interested to get more information about I2C bus
+There is a lot according to the scheme of the following figure and the communications will be manged by the **LiquidCrystal_I2C library**.
 
 <img src="https://user-images.githubusercontent.com/94467184/144692377-9d0b1b67-9b64-42e5-a704-afd23688af9c.jpg" width="70%" height="70%">
 
-## **LED bars and CDI**
-The last components i've used are a couple LED bars (+ 1 green central LED) to realize a CDI (Course Deviation Indicator) when we are in range with a VOR.
-Each bar has 10 individually driven LEDs. Eight LEDs are green, one is yellow and the last is red. Using these bars i can see how much deviation (left or right) is from the radial set via the OBS on a specific VOR station. Also in this case the simple **Grove_LED_Bar library** is used to manage the bars. 
 
-
-<img src="https://user-images.githubusercontent.com/94467184/144693314-ae652585-4712-4aac-8cbd-42745784322a.png" width="30%" height="30%">
 
 
 
