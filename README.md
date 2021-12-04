@@ -63,13 +63,14 @@ Due to the small power consumption, **the panel will be simply powered by the 5V
 ## **LEDs and buttons connections**
 Before to start is better to spend few words about LEDs and buttons connection.
 
-Each Arduino pin can be configured to be an Input or Output by the program so all it's very flexible. Obviously every LED connection has to be an Output (any output pin produces a 5Vcc when at high level) and every button/switch as Input but in this last case the program have to configure it like an **"INPUT_PULLUP"** pin to avoid random readings.
+Each Arduino pin can be configured as an Input or Output by the program and this is very flexible. Obviously each LED connection has to be an Output (any output pin produces a 5Vcc when at high level) and each button/switch as Input but in this last case the program have to declare it as **"INPUT_PULLUP"** pin to avoid random readings.
 
 In the following picture you can see how to connect a generic LED and a generic button/switch.
 
 <img src="https://user-images.githubusercontent.com/94467184/144689525-0ceccac7-b2d9-435a-b5f5-9f292a1aac2a.jpg" width="80%" height="80%">
 
-**IMPORTANT**: to avoid a damage of the micro controller itself **NEVER CONNECT A LED DIRECTLY to the Arduino**, but use a **resistor** to limit the current flowing to the LED. **The resistor value depends on the LED brand and colour** (normally red ones needs a lower value resistor than green ones) but you could start with a value of 1KOhm and then change it to find the right value/light for your LED. If you have a tester you can also measure the current flowing into the LED considering that the maximum current on a output PIN of the Arduino cannot **never exceed 20mA**. If you cannot measure the current, just look at your LED's light and don't exceed with its brightness.
+### **About the resistor** 
+To avoid a damage of the micro controller itself **NEVER CONNECT A LED DIRECTLY to the Arduino**, but use a **resistor** to limit the current flowing to the LED. **The resistor value depends on the LED brand and colour** (normally red ones needs a lower value resistor than green ones) but you could start with a value of 1KOhm and then change it to find the right value/brightness for your LED. If you have a tester you can also measure the current flowing into the LED considering that the maximum current on a output PIN of the Arduino cannot **exceed 20mA**. If you cannot measure the current, just look at your LED's light and don't exceed with its brightness.
 
 Each button should be "normally opened" so it will "close the circuit" to the ground only when pressed.
 
