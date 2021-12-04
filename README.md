@@ -25,8 +25,8 @@ This panel manages and shows the following parameters:
 
 I made my panel to be placed above my PC monitor so i can see all the parameters in the most comfortable way.
 
-All the Radio frequencies and courses are shown and edited on the first 16x2 char LCD. Speed(s), Altitude, HDG, etc are shown on a second LCD and the CDI is shown using 2 LED bars + a single 3mm green central LED.
-To edit every frequency and course i used an encoder + 1 button.
+All the Radio frequencies and courses are shown and edited on the first 16x2 char LCD. Some plane parameter like Speed(s), Altitude, HDG, etc, are shown on a second LCD and the CDI is shown using 2 LED bars + a single 3mm green central LED.
+To edit each frequency and course i used an encoder + 1 button.
 
 <img src="https://user-images.githubusercontent.com/94467184/144687184-f3bc54db-0105-41a0-8961-6876fe6753f5.jpg" width="70%" height="70%">
 
