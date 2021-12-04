@@ -81,7 +81,7 @@ Also these devices are more complex than a simple LED but 2x16 chars LCDs are wi
 
 The serial interface version of the LCD comes with a small additional board (that must be soldered to the LCD one) that allows to communicate with other devices using a **serial protocol called I2C**.
 
-<img src="https://user-images.githubusercontent.com/94467184/144691093-544582cf-7d3e-490a-b2f9-4e852264e4de.jpg" width="350%" height="35%">
+<img src="https://user-images.githubusercontent.com/94467184/144691093-544582cf-7d3e-490a-b2f9-4e852264e4de.jpg" width="35%" height="35%">
 
 So, within the project, the modules communicate with each other according to the scheme of the following figure and the communications will be manged by the **LiquidCrystal_I2C library**.
 
