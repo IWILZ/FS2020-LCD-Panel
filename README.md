@@ -27,7 +27,8 @@ I made my panel to be placed above my PC monitor so i can see all the parameters
 
 All the Radio frequencies and courses are shown and edited on the first 16x2 char LCD. Speed(s), Altitude, HDG, etc are shown on a second LCD and the CDI is shown using 2 LED bars + a single 3mm green central LED.
 To edit every frequency and course i used an encoder + 1 button.
-![picture 0](https://user-images.githubusercontent.com/94467184/144687184-f3bc54db-0105-41a0-8961-6876fe6753f5.jpg)
+
+<img src="https://user-images.githubusercontent.com/94467184/144687184-f3bc54db-0105-41a0-8961-6876fe6753f5.jpg" width="70%" height="70%">
 
 
 ## **The architecture**
@@ -37,7 +38,7 @@ In the following picture you can see **3 components**:
 2. a program (**FS2020TA.exe**) that manages the bidirectional communications with FS (you will find a link to this program later in this document)
 3. the **Flight Simulator** itself
 The panel reads values and send commands to FS using the **FS2020TA.exe** (made by Seahawk240) as a sort of communication "repeater". The Arduino board communicates with the PC and FS2020TA.exe (that uses a SimConnect.dll) using a standard USB port. The communication protocol is very simple and will be explaned later.
-![picture 2](https://user-images.githubusercontent.com/94467184/144688653-83b6088f-c166-4de2-abef-9cad8941791a.jpg)
+<img src="https://user-images.githubusercontent.com/94467184/144688653-83b6088f-c166-4de2-abef-9cad8941791a.jpg" width="70%" height="70%">
 
 ## **What you need**
 What you need is:
@@ -64,7 +65,7 @@ Each Arduino pin can be configured to be an Input or Output by the program so al
 
 In the following picture you can see how to connect a generic LED and a generic button/switch.
 
-![picture 4](https://user-images.githubusercontent.com/94467184/144689525-0ceccac7-b2d9-435a-b5f5-9f292a1aac2a.jpg)
+<img src="https://user-images.githubusercontent.com/94467184/144689525-0ceccac7-b2d9-435a-b5f5-9f292a1aac2a.jpg" width="80%" height="80%">
 
 **IMPORTANT**: to avoid a damage of the micro controller itself **NEVER CONNECT A LED DIRECTLY to the Arduino**, but use a **resistor** to limit the current flowing to the LED. **The resistor value depends on the LED brand and colour** (normally red ones needs a lower value resistor than green ones) but you could start with a value of 1KOhm and then change it to find the right value/light for your LED. If you have a tester you can also measure the current flowing into the LED considering that the maximum current on a output PIN of the Arduino cannot **never exceed 20mA**. If you cannot measure the current, just look at your LED's light and don't exceed with its brightness.
 
@@ -73,19 +74,20 @@ Each button should be "normally opened" so it will "close the circuit" to the gr
 ## **The Encoder**
 In this project the encoder allow us to edit frequencies and courses rotating the shaft so it is quite a sort of "fast button" that changes its state very quickly when is turned right or left. Furthermore, our encoder must have also a button that is activated by pressing the rotation shaft. For these reasons an encoder is a bit more complex than a simple button as you can see in the following picture but this is not a problem because the program uses the **BasicEncoder library** to manage it.
 
-![picture 5](https://user-images.githubusercontent.com/94467184/144690024-96a5ee97-b932-485a-949e-6504f55dfdcd.jpg)
+<img src="https://user-images.githubusercontent.com/94467184/144690024-96a5ee97-b932-485a-949e-6504f55dfdcd.jpg" width="30%" height="30%">
 
 ## **The LCD and the bus I2C**
 Also these devices are more complex than a simple LED but 2x16 chars LCDs are widely used in a lot of projects so they are cheap and well known. They are available in 2 versions: **with** and **without** a serial interface and in this project **we need the first version** because they need **only 2 PINs** (in addition to power supply) to be connected to an Arduino board.
 
-The serial interface version of the LCD comes with a small additional board that allows to communicate with other devices using a **serial protocol called I2C** and the small board must be soldered to the LCD one.
+The serial interface version of the LCD comes with a small additional board (that must be soldered to the LCD one) that allows to communicate with other devices using a **serial protocol called I2C**.
 
-![picture 6](https://user-images.githubusercontent.com/94467184/144691093-544582cf-7d3e-490a-b2f9-4e852264e4de.jpg)
+<img src="https://user-images.githubusercontent.com/94467184/144691093-544582cf-7d3e-490a-b2f9-4e852264e4de.jpg" width="50%" height="50%">
 
 So, within the project, the modules communicate with each other according to the scheme of the following figure and the communications will be manged by the **LiquidCrystal_I2C library**.
 
+<img src="https://user-images.githubusercontent.com/94467184/144692377-9d0b1b67-9b64-42e5-a704-afd23688af9c.jpg" width="70%" height="70%">
 
-![PICTURE 7](https://user-images.githubusercontent.com/94467184/144692083-7aac30fb-d2cb-4067-9922-b7e0c063257f.jpg)
+
 
 
 
