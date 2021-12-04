@@ -17,13 +17,13 @@ Like my first project, you can use **an Arduino board of any type** (i used a Na
 
 ## **What it does**
 This panel manages and shows the following parameters:
-1. display NAV1 & NAV2 Active frequencies
-2. display NAV1 & NAV2 Standby frequencies
+1. display **NAV1 & NAV2 Active** frequencies
+2. display **NAV1 & NAV2 Standby** frequencies
 3. edit and switch NAV1 & NAV2 Standby frequencies
-4. display and edit radial setting of NAV1 & NAV2 (OBS)
-5. display and edit ADF frequency and its HDG
-6. when a NAVx starts to receive a valid signal, the program automatically displays its CDI on 2 LED bars (with priority to NAV1).
-7. on a second LCD the program displays Indicated Air Speed, Altitude (QNH), Height (QFE), HDG and Vertical Speed
+4. display and edit **radial setting** of NAV1 & NAV2 (**OBS**)
+5. display and edit **ADF frequency and its HDG**
+6. when a NAVx starts to receive a valid signal, the program automatically displays its **CDI** on 2 LED bars (with priority to NAV1).
+7. on a second LCD the program displays **Indicated Air Speed, Altitude (QNH), Height (QFE), HDG and Vertical Speed**
 
 I made my panel to be placed above my PC monitor so i can see all the parameters in the most comfortable way.
 
