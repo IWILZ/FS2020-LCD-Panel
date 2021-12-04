@@ -75,15 +75,20 @@ In this project the encoder allow us to edit frequencies and courses rotating th
 
 ![picture 5](https://user-images.githubusercontent.com/94467184/144690024-96a5ee97-b932-485a-949e-6504f55dfdcd.jpg)
 
-## **Using the LCDs**
-Also these devices are more complex than a simple LED but 2x16 chars LCDs are widely used in a lot of projects so they are cheap and well known. They are available in 2 versions: **with** and **without** serial interface and in this project **we need the first version** because they need **only 2 PINs** (in addition to power supply) to be connected to an Arduino board.
+## **The LCD and the bus I2C**
+Also these devices are more complex than a simple LED but 2x16 chars LCDs are widely used in a lot of projects so they are cheap and well known. They are available in 2 versions: **with** and **without** a serial interface and in this project **we need the first version** because they need **only 2 PINs** (in addition to power supply) to be connected to an Arduino board.
 
-The LCD comes with a small additional board that communicates with other devices with a **serial protocol called I2C**. 
+The serial interface version of the LCD comes with a small additional board that allows to communicate with other devices using a **serial protocol called I2C** and the small board must be soldered to the LCD one.
 
 ![picture 6](https://user-images.githubusercontent.com/94467184/144691093-544582cf-7d3e-490a-b2f9-4e852264e4de.jpg)
 
+So, within the project, the modules communicate with each other according to the scheme of the following figure.
 
-![BUS I2C](https://user-images.githubusercontent.com/94467184/144691604-1f647bc3-3aaf-42ce-babb-b288b0b54c70.jpg)
+
+![PICTURE 7](https://user-images.githubusercontent.com/94467184/144691940-857fdef9-567a-4231-b923-cf067c138e98.jpg)
+
+
+
 
 
 **Sorry.... Under construction**
