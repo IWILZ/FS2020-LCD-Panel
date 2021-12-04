@@ -3,7 +3,7 @@ Two alphanumeric LCDs and 2 LED bars to show and manage some in-flight parameter
 
 ![picture 1](https://user-images.githubusercontent.com/94467184/144686894-c6397e9b-c9e7-4ae6-ac98-a33d2978ecd4.jpg)
 
-About the radio stack and due to the large number of planes with very different functionalities (for example, there are planes that have the standby frequency on the ADF and those that don't), it could be necessary to customize the program to obtain the same function on different planes. 
+About the radio stack and due to the large number of planes with very different functionalities (for example, there are planes that have the standby frequency on the ADF and those that don't), it could be necessary to customize the program to obtain some function on different planes. 
 
 ## **Why this project**
 This second project is a bit more complicated than the first **Switch/LED Panel** but anyway i will give you every useful informations to let you build your own panel.
