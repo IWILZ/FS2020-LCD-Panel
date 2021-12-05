@@ -95,7 +95,7 @@ The serial interface version of the LCD comes with a small additional board that
 
 The name of this serial bus is **I2C** and Arduino uses it to communicate with both LCDs but obviously each of them must be uniquely identified and this is achieved by **assigning them a different address** soldering a tin drop between **A0, A1, or A2 pads**. 
 
-In my case the I2C adapters came with a the predefined **0x27** address (with all pads unsoldered) and i've used one of them as **flight parameters LCD**.
+In my case the I2C adapters came with the predefined **0x27** address (with all pads unsoldered) and i've used one of them as **flight parameters LCD**.
 Then i soldered the pad A0 on the other obtaining the address **0x26** for the **radio stack** but when you buy your LCDs, please check **how you can change the address because different brands could have different procedures**.
 
 **Also on the Arduino side you have to check on which pins you have to connect the I2C bus** because this depends on the specific Arduino board. On the Arduino **Nano** for example the I2C bus must be connect on **A4 and A5** pins.
@@ -105,7 +105,7 @@ If you are interested to get more information about I2C bus you can read here: h
 
 The following figure shows the complete bus architecture of the project and the communications from Arduino and both LCDs are done using the **LiquidCrystal_I2C library**.
 
-<img src="https://user-images.githubusercontent.com/94467184/144692377-9d0b1b67-9b64-42e5-a704-afd23688af9c.jpg" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/94467184/144692377-9d0b1b67-9b64-42e5-a704-afd23688af9c.jpg" width="80%" height="80%">
 
 
 
