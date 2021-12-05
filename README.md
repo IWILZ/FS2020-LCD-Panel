@@ -78,15 +78,17 @@ In this project the encoder allow us to edit frequencies and courses rotating th
 <img src="https://user-images.githubusercontent.com/94467184/144690024-96a5ee97-b932-485a-949e-6504f55dfdcd.jpg" width="30%" height="30%">
 
 ## **LED bars and CDI**
-For this panel i've used also 2 LED bars (+ 1 green central LED) to realize a CDI (Course Deviation Indicator) when in range with a VOR station.
-Each bar has 10 individually driven LEDs. Eight LEDs are green, one is yellow and the last is red. Using these bars i can see how much deviation (left or right) is from the radial set via the OBS on a specific VOR station. Also in this case the simple **Grove_LED_Bar library** is used to manage the bars. 
+For this panel i've used also 2 LED bars (+ 1 green central LED) to realize a CDI (**Course Deviation Indicator**) when in range with a VOR station.
+Each bar has 10 individually driven LEDs. Eight of them are green, one is yellow and the last is red. Using these bars i can see how much deviation (left or right) is from the radial set via the OBS on a specific VOR station. The simple **Grove_LED_Bar library** is used to manage the bars. 
 
 <img src="https://user-images.githubusercontent.com/94467184/144693314-ae652585-4712-4aac-8cbd-42745784322a.png" width="30%" height="30%">
+
+By the way, on my panel i've also added a 3mm green led just between the LED bars to show when the aircraft is centered on the VOR station radial and 2 more LEDs over the BARs to show which VOR station the CDI indication refers to.
 
 ## **The LCDs**
 Yes LCDs are more complex than a simple LED, but these 2x16 chars devices are widely used in a lot of projects so they are cheap and well known. They are available in 2 versions: **with** and **without** a serial interface and in this project **we need the first version** because they need **only 2 PINs** (in addition to power supply) to be connected to an Arduino board.
 
-The serial interface version of the LCD comes with a small additional board that must be soldered under the bigger one. This board allows to communicate with other devices using a **serial protocol** using **pins SDA and SCL** (close to GND and VCC).
+The serial interface version of the LCD comes with a second small additional board that must be soldered under the bigger one. This board allows to communicate with other devices using a **serial protocol** using **pins SDA and SCL** (close to GND and VCC).
 
 <img src="https://user-images.githubusercontent.com/94467184/144728712-aac3c2a1-28b8-4e8b-951a-7f6cba598987.jpg" width="60%" height="60%">
 
