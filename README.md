@@ -88,7 +88,8 @@ Yes LCDs are more complex than a simple LED, but these 2x16 chars devices are wi
 
 The serial interface version of the LCD comes with a small additional board (that must be soldered to the LCD one) that allows to communicate with other devices using a **serial protocol**.
 
-<img src="https://user-images.githubusercontent.com/94467184/144691093-544582cf-7d3e-490a-b2f9-4e852264e4de.jpg" width="35%" height="35%">
+<img src="https://user-images.githubusercontent.com/94467184/144728712-aac3c2a1-28b8-4e8b-951a-7f6cba598987.jpg" width="35%" height="35%">
+
 
 ### **The I2C serial BUS**
 
