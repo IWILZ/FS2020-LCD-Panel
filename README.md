@@ -86,16 +86,22 @@ Each bar has 10 individually driven LEDs. Eight LEDs are green, one is yellow an
 ## **The LCDs**
 Yes LCDs are more complex than a simple LED, but these 2x16 chars devices are widely used in a lot of projects so they are cheap and well known. They are available in 2 versions: **with** and **without** a serial interface and in this project **we need the first version** because they need **only 2 PINs** (in addition to power supply) to be connected to an Arduino board.
 
-The serial interface version of the LCD comes with a small additional board (that must be soldered to the LCD one) that allows to communicate with other devices using a **serial protocol**.
+The serial interface version of the LCD comes with a small additional board that must be soldered under the bigger one. This board allows to communicate with other devices using a **serial protocol** using **pins SDA and SCL** (close to GND and VCC).
 
 <img src="https://user-images.githubusercontent.com/94467184/144728712-aac3c2a1-28b8-4e8b-951a-7f6cba598987.jpg" width="60%" height="60%">
 
 
 ### **The I2C serial BUS**
 
-Now you know that, within the project Arduino communicates with both LCDs using a serial bus named I2C that is a bi-directional BUS but in this case informations flow only from the microcontroller to each LCD but these need to have **two different addresses**. 
-If you are interested to get more information about I2C bus
-There is a lot according to the scheme of the following figure and the communications will be manged by the **LiquidCrystal_I2C library**.
+The name of this serial bus is **I2C** and Arduino uses it to communicate with both LCDs but obviously each of them must be uniquely identified and this is achieved by **assigning them a different address** soldering a tin drop between **A0, A1, or A2 pads**. 
+
+The I2C adapter comes with a predefined I2C address, which is **0x27** (with all pads unsoldered) and i've used it as **flight parameters LCD**.
+Then i soldered the pad A0 on the other LCD obtaining the address **0x26** for the **radio stack**. 
+
+I2C is a bi-directional BUS but in this case informations flow only from the microcontroller to each LCD.
+If you are interested to get more information about I2C bus you can read here: https://en.wikipedia.org/wiki/I%C2%B2C
+
+The following figure shows the complete bus architecture of the project and the communications from Arduino and both LCDs are done using the **LiquidCrystal_I2C library**.
 
 <img src="https://user-images.githubusercontent.com/94467184/144692377-9d0b1b67-9b64-42e5-a704-afd23688af9c.jpg" width="70%" height="70%">
 
