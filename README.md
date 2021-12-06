@@ -189,10 +189,10 @@ To send a command to FS you have just to send a string using **Serial.print()** 
 
 ## **How the program manages parameters from FS2020**
 
-Due to the total number of different parameters that the program must receive (also considering that about half of those values are double) and that FS2020TA.exe cyclically sends all parameters one after the other, after some tests i realized that waiting for a specific parameter was a too slow solution.
+Due to the total number of different parameters that the program must receive (also considering that about half of those values are double) and that FS2020TA.exe cyclically sends all parameters one after the other, after some tests i realized that **waiting for a specific parameter was a too slow solution**.
 
 So i chose a different strategy.
-At each "main loop", the GetParamFromFS2020() function reads the first parameter it receives (without expecting a specific one) and stores it in a position dedicated to it into a local array, ready to be used later by the program and this solution proved to be much more efficient.
+At each "main loop", the GetParamFromFS2020() function stores the next parameter it receives (without expecting a specific one) into it's dedicated position inside the **FromFSArray[NUM_FS_PARAM]** array, ready to be used later by the program and this solution proved to be much more efficient.
 
 For this purpose, the program uses the following **struct** and **array**:
 ```
