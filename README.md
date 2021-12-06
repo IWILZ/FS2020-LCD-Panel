@@ -3,17 +3,17 @@ Two alphanumeric LCDs and 2 LED bars to show and manage some in-flight parameter
 
 ![picture 1](https://user-images.githubusercontent.com/94467184/144686894-c6397e9b-c9e7-4ae6-ac98-a33d2978ecd4.jpg)
 
-About the radio stack and due to the large number of planes with very different functionalities (for example, there are planes that have the standby frequency on the ADF and those that don't), it could be necessary to customize the program to obtain some function on different planes. 
+About the radio stack and due to the large number of planes with very different functionalities (for example, some planes have the standby frequency for the ADF and others  don't), it could be necessary to customize the program to obtain some function on different aircrafts of your choice. 
 
 ## **Why this project**
-This second project is a bit more complicated than the first **Switch/LED Panel** but anyway i will give you every useful informations to let you build your own panel.
+This project is a bit more complicated than the **Switch/LED Panel** but anyway i will give you every useful informations to let you build your own panel.
 
-Again i started with these main goals in mind:
+Again i started with these main goals in my mind:
 1. i wanted to build it using one of my Arduino(s) i had in my drawer
-2. i wanted to write some code for it so i didn't chose any "high-level" developing HW/SW platform (like Mobiflight for example). They are very powerful, but **i like to write my own code and solder some wires from scratch to obtain a flexible solution customized on my needs**
+2. i wanted to write some code for it so i didn't chose any "high-level" developing HW/SW platform (like Mobiflight for example). They are very powerful, but **i like to write my own code and solder some wires from scratch to obtain a smart solution customized on my needs**
 3. i wanted to realize a simple, flexible and cheap panel
 
-Like my first project, you can use **an Arduino board of any type** (i used a Nano and the only limit is the number of I/O pins) plus some cheap other stuff like an encoder, a couple of LCDs and few LEDs and buttons.
+Like the **Switch/LED Panel**, you can use **an Arduino board of any type** (i used a Nano but the only limit is the number of I/O pins) plus some cheap other stuff like an encoder, a couple of LCDs and few LEDs and buttons.
 
 ## **What it does**
 This panel manages and shows the following parameters:
@@ -61,22 +61,22 @@ What you need is:
 
 For the front panel i used a piece of a carbon fiber plate but you can use also a wood plate or anything else from about 1.5 to 3mm thick.
 
-Due to the small power consumption, **the panel will be simply powered by the 5Vcc from the USB of your PC** but if you add some more LEDs or devices, **check the power consumption before damaging your PC's USB board**.
+Due to the small power consumption, **the panel will be simply powered by the 5Vcc from the USB of your PC** but if you add some more LEDs or devices, **check the power consumption to avoid damaging your PC's USB board**.
 
 ## **LEDs and buttons connections**
-Before to start is better to spend few words about LEDs and buttons connection.
+Before to start is better to spend few words about LEDs and buttons connections.
 
 Each Arduino pin can be configured as Input or Output by the program and this is very flexible. Obviously each LED connection has to be an Output (any output pin produces a 5Vcc when at high level) and each button/switch as Input but in this last case the program have to declare it as **"INPUT_PULLUP"** pin to avoid random readings.
 
-In the following picture you can see how to connect a generic LED and a generic button/switch. Each button should be "normally opened" so it will "close the circuit" to the ground only when pressed.
+In the following picture you can see how to connect a generic LED and a generic button/switch. Each button should be "normally opened" so it will "close the circuit" to the ground only when pressed: so we could say that it's "active LOW".
 
 <img src="https://user-images.githubusercontent.com/94467184/144689525-0ceccac7-b2d9-435a-b5f5-9f292a1aac2a.jpg" width="80%" height="80%">
 
 ### **About the resistors** 
-To avoid a damage of the micro controller itself **NEVER CONNECT A LED DIRECTLY to the Arduino**, but use a **resistor** to limit the current flowing to the LED. **The resistor value depends on the LED brand and colour** (normally red ones needs a lower value resistor than green ones) but you could start with a value of 1KOhm and then change it to find the right value/brightness for your LED. If you have a tester you can also measure the current flowing into the LED considering that the maximum current on a output PIN of the Arduino cannot **exceed 20mA**. If you cannot measure the current, just look at your LED's light and don't exceed with its brightness.
+To avoid a damage of the micro controller itself **NEVER CONNECT A LED DIRECTLY to the Arduino**, but use a **resistor** to limit the current flowing into it. **The resistor value depends on the LED brand and colour** (normally red ones needs a lower value resistor than green ones) but you could start with a value of 1KOhm and then change it to find the right value/brightness for your LED. If you have a tester you can also measure the current flowing into the LED considering that the maximum current on a output PIN of the Arduino cannot **exceed 20mA**. If you cannot measure the current, just look at your LED's light and don't exceed with its brightness.
 
 ## **The Encoder**
-In this project the encoder allow us to edit frequencies and courses just rotating the shaft so it is quite a sort of "fast button" that changes its state very quickly when is turned right or left. Furthermore, our encoder **must have also a button** that is activated by pressing the rotation shaft. For these reasons an encoder is a bit more complex than a simple button as you can see in the following picture but this is not a problem because the program uses the **BasicEncoder library** to manage it.
+In this project the encoder allow us to edit frequencies and courses just rotating its shaft so it is quite a sort of "fast button" that changes its state very quickly when is turned right or left. Furthermore, our encoder **must have also a button** that is activated by pressing the rotation shaft. For these reasons an encoder is a bit more complex than a simple button as you can see in the following picture but this is not a problem because the program uses the **BasicEncoder library** to manage it.
 
 <img src="https://user-images.githubusercontent.com/94467184/144690024-96a5ee97-b932-485a-949e-6504f55dfdcd.jpg" width="30%" height="30%">
 
@@ -98,14 +98,14 @@ The serial interface version of the LCD comes with a second small additional boa
 
 ### **The I2C serial BUS**
 
-The name of this bus is **I2C** and Arduino uses it to communicate with both LCDs but obviously each of them must be uniquely identified and this is achieved by **assigning them a different address** soldering a tin drop between **A0, A1, or A2 pads**. 
+The name of the serial bus is **I2C** and Arduino uses it to communicate with both LCDs but obviously each of them must be uniquely identified and this is achieved by **assigning them a different address** soldering a tin drop between **A0, A1, or A2 pads**. 
 
 In my case the I2C adapters came with the predefined **0x27** address (with all pads unsoldered) and i've used the first as **flight parameters LCD**.
-Then i soldered the pad A0 on the second giving it the address **0x26** for the **radio stack** but when you buy your LCDs, please check **how you can change the address because different brands could have different procedures**.
+Then i soldered the pad A0 on the second giving it the address **0x26** for the **radio stack** but when you buy your LCDs, please check **how you can change the address because different brands could have different procedures and/or address ranges**.
 
-**Also on the Arduino side you have to check on which pins you have to connect the I2C bus** because this depends on the specific Arduino board. On the Arduino **Nano** for example the I2C bus must be connect on **A4 and A5** pins.
+**Also on the Arduino side you have to check on which pins you have to connect the I2C bus** because they depends on the specific Arduino board. On the Arduino **Nano** for example the I2C bus must be connect on **A4 and A5** pins.
 
-I2C is a bi-directional BUS but in this project informations flow only from the microcontroller to each LCD.
+I2C is a bi-directional BUS but in this project data flow only from the microcontroller to each LCD.
 If you are interested to get more information about I2C bus you can read here: https://en.wikipedia.org/wiki/I%C2%B2C
 
 The following figure shows the complete bus architecture of the project. The communications from Arduino to both LCDs are done using the **LiquidCrystal_I2C library**.
