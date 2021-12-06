@@ -112,8 +112,80 @@ The following figure shows the complete bus architecture of the project. The com
 
 <img src="https://user-images.githubusercontent.com/94467184/144692377-9d0b1b67-9b64-42e5-a704-afd23688af9c.jpg" width="80%" height="80%">
 
+## **The FS2020TA.exe**
+FS2020TA.exe acts as a software "bridge" on the PC to make a bi-directional communication between the Arduino board and FS2020. 
+The program is free, was developed by **Matthias Schaaf** and can be dwonloaded from: https://github.com/Seahawk240/Microsoft-FS2020-To-Arduino
 
+The program (wich uses SimConnect.dll) is very simple and strong and the communication is made by Arduino using standard **Serial** functions. To get informations from FS you have to edit a sort of list within FS2020TA and then you will use **Serial.readStringUntil()** into the Arduino sketch. In the same way to send commands you simply have to use **Serial.print()**.
 
+You can also find a video description here: https://www.youtube.com/watch?v=EVqY8KhdZI8 and for more informations, please read the official documentation from Matthias Schaaf.
+
+About FS2020 variables, you can also find some useful info here: https://docs.flightsimulator.com/html/index.htm#t=Programming_Tools%2FSimVars%2FSimulation_Variables.htm
+
+## **The communication protocol with FS2020TA**
+The communications is made simply sending and receiving strings over the USB connection of the PC. 
+
+### Reading values/parameters from FS
+Every parameter is received as a string using "Serial.readStringUntil()" and the format is **"@ID/index=value$"** where '@', '/', '=' and '$' are markers to identify the 3 field "**ID**", "**index**" and "**value**". 
+1. **ID** = idientifies each parameter
+2. **index** = idientifies different objects having the same parameter. For example when ID=502 (NAV_ACTIVE_FREQUENCY), index=1 is for the frequency of NAV1 and index=2 is the same for NAV2. When there is only 1 object to identify, index=-1 (for example for the Altitude)
+3. **value** = is the value itself and can be interpreted as an integer, float, string, degree, boolean, etc depending of the kind of parameter
+
+Of course depending on the "ID" value, the program has to manage "value" converting it from a string to a number if necessary.
+
+In this project all we need are the following IDs:
+```
+/*************************************************************
+             Parameter IDs from FS2020
+ *************************************************************/
+#define ID_ADF_HDG      9       // ADF CARD (degrees HDG ADF)
+#define ID_ADF_ACT_FREQ 7       // ADF ACTIVE FREQUENCY
+#define ID_NAV_ACT_FREQ 502     // NAV 1 & 2 ACTIVE FREQ
+#define ID_NAV_SBY_FREQ 526     // NAV 1 & 2 STANDBY FREQ
+#define ID_NAV_OBS      519     // OBS 1 & 2 (degrees)
+#define ID_HEADING      413     // HEADING INDICATOR
+#define ID_AIRSPEED     37      // AIRSPEED INDICATED
+#define ID_ALTITUDE     431     // INDICATED ALTITUDE
+#define ID_QFE          557     // PLANE ALT ABOVE GROUND
+#define ID_VARIOMETER   763     // VERTICAL SPEED
+#define ID_NAV_CDI      505     // NAV CDI value of VORx/NAVx (range -127...+127) (index 1/2)
+#define ID_NAV_HAS_NAV  516     // (Bool) NAVx active (index 1/2)
+#define ID_NAV_CODES    506     // Binary mask for NAVx state (index 1/2)
+```
+
+FS2020TA.exe sends continuously the above list of parameters ending each one with a '\n' (for example "@37/-1=123$\n" means that we are flying at 123Knots).
+
+Inside the main loop() of the sketch, the program calls **GetParamFromFS2020()** function that simply reads the next string until '\n' and stores "ID", "index" and "value" into 3 global variables. After that the program manage this parameter switching on/off a corresponding LED.
+
+### Sending commands to FS
+To send a command to FS you have just to send a string using **Serial.print()** and this is the list of all the commands we need:
+```
+/*************************************************************
+                    Commands to FS2020
+ *************************************************************/
+#define NAV1_INC_MHZ  "@568/$"  // NAV1_RADIO_WHOLE_INC
+#define NAV2_INC_MHZ  "@577/$"  // NAV2_RADIO_WHOLE_INC
+#define NAV1_DEC_MHZ  "@567/$"  // NAV1_RADIO_WHOLE_DEC
+#define NAV2_DEC_MHZ  "@576/$"  // NAV2_RADIO_WHOLE_DEC
+#define NAV1_INC_KHZ  "@564/$"  // NAV1_RADIO_FRACT_INC_CARRY
+#define NAV2_INC_KHZ  "@573/$"  // NAV2_RADIO_FRACT_INC_CARRY
+#define NAV1_DEC_KHZ  "@562/$"  // NAV1_RADIO_FRACT_DEC_CARRY
+#define NAV2_DEC_KHZ  "@571/$"  // NAV2_RADIO_FRACT_DEC_CARRY
+#define NAV1_SWAP     "@566/$"  // NAV1_RADIO_SWAP 
+#define NAV2_SWAP     "@575/$"  // NAV2_RADIO_SWAP 
+#define OBI1_INC      "@972/$"  // VOR1_OBI_INC
+#define OBI1_DEC      "@971/$"  // VOR1_OBI_DEC
+#define OBI2_INC      "@975/$"  // VOR2_OBI_INC
+#define OBI2_DEC      "@974/$"  // VOR2_OBI_DEC
+#define ADF_100_INC   "@8/$"    // ADF_100_INC
+#define ADF_100_DEC   "@7/$"    // ADF_100_DEC
+#define ADF_1_INC     "@19/$"   // ADF1_WHOLE_INC
+#define ADF_1_DEC     "@18/$"   // ADF1_WHOLE_DEC
+#define ADF_HDG_INC   "@10/$"   // ADF_CARD_INC  
+#define ADF_HDG_DEC   "@9/$"    // ADF_CARD_DEC 
+#define ADF_FRACT_INC_CARRY   "@14/$"   // Inc, ADF 1 freq. by 0.1 KHz, with carry  
+#define ADF_FRACT_DEC_CARRY   "@13/$"   // Dec, ADF 1 freq. by 0.1 KHz, with carry   
+```
 
 
 
