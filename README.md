@@ -187,6 +187,45 @@ To send a command to FS you have just to send a string using **Serial.print()** 
 #define ADF_FRACT_DEC_CARRY   "@13/$"   // Dec, ADF 1 freq. by 0.1 KHz, with carry   
 ```
 
+## **How the program manages parameters from FS2020**
+
+Due to the total number of different parameters that the program must receive (also considering that about half of those values are double) and that FS2020TA.exe cyclically sends all parameters one after the other, after some tests i realized that waiting for a specific parameter was a too slow solution.
+
+So i chose a different strategy.
+At each "main loop", the GetParamFromFS2020() function reads the first parameter it receives (without expecting a specific one) and stores it in a position dedicated to it into a local array, ready to be used later by the program and this solution proved to be much more efficient.
+
+For this purpose, the program uses the following **struct** and **array**:
+```
+struct t_FromFS {
+  int id;
+  int index;
+  String value;
+};
+
+#define NUM_FS_PARAM    19 
+t_FromFS FromFSArray[NUM_FS_PARAM] = {
+  {ID_ADF_HDG,        -1, "0"},   // 0
+  {ID_ADF_ACT_FREQ,    1, "0.0"}, // 1
+  {ID_NAV_ACT_FREQ,    1, "0.0"}, // 2 
+  {ID_NAV_ACT_FREQ,    2, "0.0"}, // 3 
+  {ID_NAV_SBY_FREQ,    1, "0.0"}, // 4 
+  {ID_NAV_SBY_FREQ,    2, "0.0"}, // 5 
+  {ID_NAV_OBS,         1, "0"},   // 6
+  {ID_NAV_OBS,         2, "0"},   // 7
+  {ID_HEADING,        -1, "0"},   // 8
+  {ID_AIRSPEED,       -1, "0"},   // 9
+  {ID_ALTITUDE,       -1, "0"},   // 10
+  {ID_QFE,            -1, "0"},   // 11
+  {ID_VARIOMETER,     -1, "0"},   // 12
+  {ID_NAV_CDI,         1, "0"},   // 13
+  {ID_NAV_CDI,         2, "0"},   // 14
+  {ID_NAV_HAS_NAV,     1, "0"},   // 15
+  {ID_NAV_HAS_NAV,     2, "0"},   // 16
+  {ID_NAV_CODES,       1, "0"},   // 17
+  {ID_NAV_CODES,       2, "0"}    // 18
+};
+```
+
 
 
 **Sorry.... still under construction**
