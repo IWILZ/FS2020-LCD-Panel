@@ -269,10 +269,9 @@ As mentioned above, the **binary mask NAV_CODES** is useful to know everything a
 ### Merging 2 projects together
 I have currently made this project and the previous **Switch/LED Panel** which is simpler and less CPU time consuming than this one. So could be interesting to merge them obtaining one only bigger project with the following architecture:
 
-
 <img src="https://user-images.githubusercontent.com/94467184/145060388-4768e3a3-e89d-4fad-9dd7-2d3c6b26f70b.jpg" width="80%" height="80%">
 
-In this case 
+In this case Arduino 1 will manage not only the **Switch/LED Panel** but also all communications with FS via USB and will collect/store all data locally into an array of struct  ready to send them to Arduino 2 when it requests a specific parameter using the I2C bus. On the other hand, on the I2C bus **Arduino 2 will act as master** both towards the 2 LCDs and also the Arduino 1 requesting data and sending commands for FS2020.
 
 
 ## **Where to shop**
