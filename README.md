@@ -238,7 +238,7 @@ Likewise, the functions **EditNav() and EditAdf()** are finite-state machines th
 
 Of course you can extend this architecture to manage also COM1 and COM2 radio with just a little effort.
 
-## **Where to buy components**
+## **Where to shop**
 1. Arduino Nano - https://www.amazon.it/gp/product/B01FRZW24O/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
 2. LCD 2x16 - https://www.amazon.it/gp/product/B07JH6GHPR/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
 3. Encoder - https://www.amazon.it/gp/product/B08728PS6N/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
