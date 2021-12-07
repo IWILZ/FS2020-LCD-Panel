@@ -270,7 +270,9 @@ As mentioned above, the **binary mask NAV_CODES** is useful to know everything a
 I have currently made this project and the previous **Switch/LED Panel** which is simpler and less CPU time consuming than this one. So could be interesting to merge them obtaining one only bigger project with the following architecture:
 
 
-<img src="https://user-images.githubusercontent.com/94467184/145058285-4e3575f6-41c3-4842-a07b-7451431238b3.jpg" width="80%" height="80%">
+<img src="https://user-images.githubusercontent.com/94467184/145060388-4768e3a3-e89d-4fad-9dd7-2d3c6b26f70b.jpg" width="80%" height="80%">
+
+In this case 
 
 
 ## **Where to shop**
