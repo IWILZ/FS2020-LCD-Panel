@@ -245,5 +245,6 @@ Of course you can extend this architecture to manage also COM1 and COM2 radio wi
 4. Buttons - https://www.amazon.it/gp/product/B082DBBPGC/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1
 5. Breadboards - https://www.amazon.it/gp/product/B073WR78M6/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1
 6. LEDs - https://www.amazon.it/gp/product/B06X3VT6TD/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1
-7. LED bars - https://www.reichelt.com/it/it/arduino-grove-led-bar-v2-0-grv-led-bar-v2-p191175.html
-8. Wires - https://www.amazon.it/gp/product/B074P726ZR/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1
+7. Resistors - https://www.amazon.it/ARCELI-resistore-Utilizzare-colorato-Resistenza/dp/B07PVVFMHD/ref=sr_1_6
+8. LED bars - https://www.reichelt.com/it/it/arduino-grove-led-bar-v2-0-grv-led-bar-v2-p191175.html
+9. Wires - https://www.amazon.it/gp/product/B074P726ZR/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1
