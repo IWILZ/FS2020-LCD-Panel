@@ -238,6 +238,12 @@ Likewise, the functions **EditNav() and EditAdf()** are finite-state machines th
 
 Of course you can extend this architecture to manage also COM1 and COM2 radio with just a little effort.
 
+## **Possible future improvements**
+At the moment the yellow button you can see above the CDI LED bars and the rightmost green LED are connected to my Arduino board but not used yet but in my mind i have an idea. They could be useful when a VOR station gives also the DME (Distance Measuring Equipment) information indicating the number of miles away from the station. 
+
+So when the current NAV radio provides also the DME, the LED could be switched-on and pressing the yellow button could be useful to display on the "radio LCD": **the VOR frequency, its radial and the distance from the station**.
+
+
 ## **Where to shop**
 1. Arduino Nano - https://www.amazon.it/gp/product/B01FRZW24O/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
 2. LCD 2x16 - https://www.amazon.it/gp/product/B07JH6GHPR/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
