@@ -236,7 +236,7 @@ While flight parameters are simply continuously shown on the second LCD, to mana
 
 Likewise, the 2 functions **EditNav() and EditAdf()** are finite-state machines that allow to edit frequency and course of each radio using the encoder and an external button that acts as an "abort-edit".
 
-Of course you can also extend this architecture to manage also COM1 and COM2 radio with just a little effort.
+Of course you can extend this architecture to manage also COM1 and COM2 radio with just a little effort.
 
 
 **Still under construction... stay TUNED!**
