@@ -227,7 +227,7 @@ t_FromFS FromFSArray[NUM_FS_PARAM] = {
 ```
 
 ## **A finite-state machine**
-While flight parameters are simply continuously shown on the second LCD, to manage the radio stack on the first one the Arduino program is written like a "state machine" that switches among the following states rotating the encoder:
+While flight parameters are simply continuously shown on the second LCD, to manage the radio stack on the first one the Arduino program is written like a "state machine" that sequentially switches among the following states rotating the encoder:
 1. NAVs display - shows NAV1 and NAV2 active frequencies and their OBS settings
 2. ADF display - shows ADF frequency and its HDG setting
 3. NAV1 editing - to change NAV1 standby frequency and OBS1
