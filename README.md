@@ -246,7 +246,7 @@ The second LCD just shows continuosly some flight parameters but 2 of them are d
 This is because in this way the progam can optimize the 2x16 characters using only a single screen.
 
 ## **Possible future improvements**
-A couple of ideas.
+A couple of improvements could be the following.
 
 ### Introducing DME
 At the moment the yellow button you can see above the CDI LED bars and the rightmost green LED are connected to my Arduino board but not used yet but in my mind i have an idea. They could be useful when a VOR station gives also the DME (Distance Measuring Equipment) information indicating the number of miles away from the station. 
