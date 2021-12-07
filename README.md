@@ -13,7 +13,7 @@ Again i started with these main goals in my mind:
 2. i wanted to write some code for it so i didn't chose any "high-level" developing HW/SW platform (like Mobiflight for example). They are very powerful, but **i like to write my own code and solder some wires from scratch to obtain a smart solution customized on my needs**
 3. i wanted to realize a simple, flexible and cheap panel
 
-Like the **Switch/LED Panel**, you can use **an Arduino board of any type** (i used a Nano but the only limit is the number of I/O pins) plus some cheap other stuff like an encoder, a couple of LCDs and few LEDs and buttons.
+Like the **Switch/LED Panel**, you can use **an Arduino board of any type** (i used a Nano but the only limit is the number of I/O pins) plus some cheap other stuff like an encoder, a couple of LCDs and few LEDs and buttons (for the component list see at the end if this document).
 
 ## **What it does**
 This panel manages and shows the following parameters:
