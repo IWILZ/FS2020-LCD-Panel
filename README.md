@@ -241,7 +241,7 @@ Of course you can extend this architecture to manage also COM1 and COM2 radio wi
 ## **Possible future improvements**
 At the moment the yellow button you can see above the CDI LED bars and the rightmost green LED are connected to my Arduino board but not used yet but in my mind i have an idea. They could be useful when a VOR station gives also the DME (Distance Measuring Equipment) information indicating the number of miles away from the station. 
 
-So when the current NAV radio provides also the DME, the LED could be switched-on and pressing the yellow button could be useful to display on the "radio LCD": **the VOR frequency, its radial and the distance from the station**.
+So when the current NAV radio provides also the DME, the LED could be switched-on and then pressing the yellow button the program could display on the "radio LCD": **the VOR frequency, its radial and the distance from the station**.
 
 
 ## **Where to shop**
