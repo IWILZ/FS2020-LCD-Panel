@@ -273,6 +273,7 @@ I have currently made this project and the previous **Switch/LED Panel** which i
 
 In this case Arduino 1 will manage not only the **Switch/LED Panel** but also all communications with FS via USB and will collect/store all data locally into an array of struct  ready to send them to Arduino 2 when it requests a specific parameter using the I2C bus. On the other hand, on the I2C bus **Arduino 2 will act as master** both towards the 2 LCDs and also the Arduino 1 requesting data and sending commands for FS2020.
 
+This new architecture also **requires an autonomous power supply** because the sum of the consumptions would be harmful for a single USB port.
 
 ## **Where to shop**
 1. Arduino Nano - https://www.amazon.it/gp/product/B01FRZW24O/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
