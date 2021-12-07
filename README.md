@@ -194,7 +194,7 @@ Due to the total number of different parameters that the program must receive (a
 So i chose a different strategy.
 At each "main loop", the GetParamFromFS2020() function stores the next parameter it receives (without expecting a specific one) into it's dedicated position inside the **FromFSArray[NUM_FS_PARAM]** array, ready to be used later by the program and this solution proved to be much more efficient.
 
-For this purpose, the program uses the following **struct** and **array** so that GetParamFromFS2020() just fills the right "value" fields:
+For this purpose, the program uses the following **array of struct** so that GetParamFromFS2020() just fills the right "value" fields:
 ```
 struct t_FromFS {
   int id;
