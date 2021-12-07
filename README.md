@@ -234,7 +234,7 @@ While flight parameters are simply continuously shown on the second LCD, to mana
 4. NAV2 editing - to change NAV2 standby frequency and OBS2
 5. ADF editing - to change ADF frequency and its HDG
 
-Likewise, the 2 functions **EditNav() and EditAdf()** are finite-state machines that allow to edit frequency and course of each radio using the encoder and an external button that acts as an "abort-edit".
+Likewise, the functions **EditNav() and EditAdf()** are finite-state machines that allow to edit frequency and course of each radio using the encoder and an external button that acts as an "abort-edit".
 
 Of course you can extend this architecture to manage also COM1 and COM2 radio with just a little effort.
 
