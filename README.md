@@ -234,7 +234,7 @@ While flight parameters are simply continuously shown on the second LCD, to mana
 4. NAV2 editing - to change NAV2 standby frequency and OBS2
 5. ADF editing - to change ADF frequency and its HDG
 
-Likewise, the functions **EditNav() and EditAdf()** are finite-state machines that allow to edit frequency and course of each radio using the encoder and an external button that acts as an "abort-edit".
+Likewise, the functions **EditNav() and EditAdf()** are finite-state machines that allow to edit frequency and course of each radio using the encoder and an external button that acts as an "abort-edit" command.
 
 Of course you can extend this architecture to manage also COM1 and COM2 radio with just a little effort.
 
@@ -243,6 +243,13 @@ At the moment the yellow button you can see above the CDI LED bars and the right
 
 So when the current NAV radio provides also the DME, the LED could be switched-on and then pressing the yellow button the program could display on the "radio LCD": **the VOR frequency, its radial and the distance from the station**.
 
+
+## **The flight parameters**
+The second LCD just shows continuosly some flight parameters but 2 of them are displayed at short time intervals alternating one after the other. They are:
+1. vertical speed
+2. aircraft height over the ground (QFE)
+
+This is because in this way the progam can optimize the 2x16 characters using only a single screen.
 
 ## **Where to shop**
 1. Arduino Nano - https://www.amazon.it/gp/product/B01FRZW24O/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
