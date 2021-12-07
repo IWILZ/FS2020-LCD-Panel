@@ -250,6 +250,20 @@ At the moment the yellow button you can see above the CDI LED bars and the right
 
 So when the current NAV radio provides also the DME, the LED could be switched-on and then pressing the yellow button the program could display on the "radio LCD": **the VOR frequency, its radial and the distance from the station**.
 
+As mentioned above, the binary mask NAV_CODES is useful to know everything about VOR stations and these are the meanings of each bit of it:
+```  
+  BIT7:[index] 0=VOR 1=Localizer
+  BIT6:[index] 1=glide slope available
+  BIT5:[index] 1=no localizer backcourse
+  BIT4:[index] 1=DME transmitter atglide slope transmitter
+  BIT3:[index] 1=no nav signal available
+  BIT2:[index] 1=voice available
+  BIT1:[index] 1=TACAN available
+  BIT0:[index] 1=DME available
+```  
+ 
+  See also: https://docs.flightsimulator.com/html/index.htm#t=Programming_Tools%2FSimVars%2FSimulation_Variables.htm
+
 ## **Where to shop**
 1. Arduino Nano - https://www.amazon.it/gp/product/B01FRZW24O/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
 2. LCD 2x16 - https://www.amazon.it/gp/product/B07JH6GHPR/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
