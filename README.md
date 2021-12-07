@@ -246,6 +246,9 @@ The second LCD just shows continuosly some flight parameters but 2 of them are d
 This is because in this way the progam can optimize the 2x16 characters using only a single screen.
 
 ## **Possible future improvements**
+A couple of ideas.
+
+### Introducing DME
 At the moment the yellow button you can see above the CDI LED bars and the rightmost green LED are connected to my Arduino board but not used yet but in my mind i have an idea. They could be useful when a VOR station gives also the DME (Distance Measuring Equipment) information indicating the number of miles away from the station. 
 
 So when the current NAV radio provides also the DME, the LED could be switched-on and then pressing the yellow button the program could display on the "radio LCD": **the VOR frequency, its radial and the distance from the station**.
@@ -261,8 +264,14 @@ As mentioned above, the **binary mask NAV_CODES** is useful to know everything a
   BIT1:[index] 1=TACAN available
   BIT0:[index] 1=DME available
 ```  
- 
   See also: https://docs.flightsimulator.com/html/index.htm#t=Programming_Tools%2FSimVars%2FSimulation_Variables.htm
+  
+### Merging 2 projects together
+I have currently made this project and the previous **Switch/LED Panel** which is simpler and less CPU time consuming than this one. So could be interesting to merge them obtaining one only bigger project with the following architecture:
+
+
+<img src="https://user-images.githubusercontent.com/94467184/145058285-4e3575f6-41c3-4842-a07b-7451431238b3.jpg" width="80%" height="80%">
+
 
 ## **Where to shop**
 1. Arduino Nano - https://www.amazon.it/gp/product/B01FRZW24O/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
