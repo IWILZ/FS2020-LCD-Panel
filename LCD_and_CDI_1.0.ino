@@ -12,7 +12,6 @@
 
   For the documentation see:
   https://github.com/IWILZ/FS2020-LCD-Panel/blob/main/README.md
-  
 
   UPDATE LOG
   ----------
@@ -25,7 +24,6 @@
 
 #include <Arduino.h>
 #include <BasicEncoder.h>       // Rotary encoder library
-//#include <Wire.h>               // Gestione standard comunicazioni su bus I2C
 #include <LiquidCrystal_I2C.h>  // Manages serial communications with LCD 16x2 
 #include <Grove_LED_Bar.h>      // Manages LED bars
 
@@ -737,7 +735,7 @@ void EditAdf(float Adf, int Hdg) {
           if (Adf100Tmp < 1) Adf100Tmp = 17;
         }
 
-        // We need to update teh hundreds?
+        // We need to update the hundreds?
         if (encoderClick != 0) {
           lcdRadio.setCursor(8, 0);
           sprintf (str, "%2d", Adf100Tmp);
@@ -924,8 +922,8 @@ void SaveNewAdfSetup(int Adf100New, int Adf1New, int AdfDecNew, float AdfOrig, i
 
 
 /***********************************************************
-   SaveNewNavSetup - Send new freq values for NavNumber stdby NAV
-   and OBS
+   SaveNewNavSetup 
+   Send new freq values for NavNumber stdby NAV and OBS
  ***********************************************************/
 void SaveNewNavSetup(float FreqNew, float FreqOrig, byte NavNumber, bool switch_flag) {
   int MHzFreqNew, MHzFreqOrig;
@@ -1079,7 +1077,7 @@ void GetParamFromFS2020() {
 int at, slash, dollar, equal;
   
   if (Serial.available() > 0) {
-    // Read from the USB a string until the first '\'
+    // Read from the USB a string until the first '\n'
     dummy = Serial.readStringUntil('\n');
 
     at = dummy.indexOf('@');
@@ -1241,7 +1239,7 @@ void CheckVORs() {
     }
   }
  
-  // If neither of the 2 radios is receiving a valid signal 
+  // If neither of the 2 radios are receiving a valid signal 
   // turn off the CDI LEDs 
   if (Vor1Active == 0 && Vor2Active == 0) OffCdi();
 } // CheckVORs
