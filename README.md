@@ -255,7 +255,7 @@ Even if this can be nice, probably they together could have a different use. For
 
 In this case when the current NAV radio provides also the DME, the LED could be switched-on and then pressing the yellow button the program could display on the "radio LCD" **the VOR frequency, its radial and the distance from the station**.
 
-As mentioned above, the **binary mask NAV_CODES** is useful to know everything about VOR stations and these are the meanings of each bit of it:
+As mentioned above, the **binary mask NAV_CODES** is useful to know everything about VOR stations and these are the meanings of each bit of it (note that BIT7 indicates a localizer while BIT0 a DME):
 ```  
   BIT7:[index] 0=VOR 1=Localizer
   BIT6:[index] 1=glide slope available
